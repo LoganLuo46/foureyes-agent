@@ -1,0 +1,795 @@
+{
+  "customers": [
+    {
+      "key": "c1",
+      "email": "amara.okafor@gmail.com",
+      "name": "Amara Okafor",
+      "tier": "free"
+    },
+    {
+      "key": "c2",
+      "email": "lukas.brandt@web.de",
+      "name": "Lukas Brandt",
+      "tier": "free"
+    },
+    {
+      "key": "c3",
+      "email": "priya.raghavan@outlook.com",
+      "name": "Priya Raghavan",
+      "tier": "pro"
+    },
+    {
+      "key": "c4",
+      "email": "j.silvacosta@uol.com.br",
+      "name": "João Silva Costa",
+      "tier": "free"
+    },
+    {
+      "key": "c5",
+      "email": "meiling.chen88@qq.com",
+      "name": "Chen Meiling",
+      "tier": "free"
+    },
+    {
+      "key": "c6",
+      "email": "ops@northwindlogistics.io",
+      "name": "Hannah Vogel",
+      "tier": "enterprise"
+    },
+    {
+      "key": "c7",
+      "email": "dmitri.sokolov@yandex.ru",
+      "name": "Dmitri Sokolov",
+      "tier": "free"
+    },
+    {
+      "key": "c8",
+      "email": "fatima.alzahrani@hotmail.com",
+      "name": "Fatima Al-Zahrani",
+      "tier": "pro"
+    },
+    {
+      "key": "c9",
+      "email": "tyrone.jackson@gmail.com",
+      "name": "Tyrone Jackson",
+      "tier": "free"
+    },
+    {
+      "key": "c10",
+      "email": "sofia.marchetti@libero.it",
+      "name": "Sofia Marchetti",
+      "tier": "free"
+    },
+    {
+      "key": "c11",
+      "email": "kenji.watanabe@nifty.jp",
+      "name": "Kenji Watanabe",
+      "tier": "pro"
+    },
+    {
+      "key": "c12",
+      "email": "aylin.demir@gmail.com",
+      "name": "Aylin Demir",
+      "tier": "free"
+    },
+    {
+      "key": "c13",
+      "email": "facilities@cedarpointclinic.org",
+      "name": "Robert Nkemelu",
+      "tier": "enterprise"
+    },
+    {
+      "key": "c14",
+      "email": "isabela.nunez@correo.mx",
+      "name": "Isabela Núñez",
+      "tier": "pro"
+    }
+  ],
+  "orders": [
+    {
+      "key": "o1",
+      "customer_key": "c1",
+      "amount_cents": 12999,
+      "status": "delivered",
+      "placed_days_ago": 10,
+      "delivered_days_ago": 6
+    },
+    {
+      "key": "o2",
+      "customer_key": "c2",
+      "amount_cents": 4599,
+      "status": "shipped",
+      "placed_days_ago": 7,
+      "delivered_days_ago": null
+    },
+    {
+      "key": "o3",
+      "customer_key": "c3",
+      "amount_cents": 28900,
+      "status": "delivered",
+      "placed_days_ago": 20,
+      "delivered_days_ago": 15
+    },
+    {
+      "key": "o4",
+      "customer_key": "c4",
+      "amount_cents": 8999,
+      "status": "delivered",
+      "placed_days_ago": 5,
+      "delivered_days_ago": 2
+    },
+    {
+      "key": "o5",
+      "customer_key": "c5",
+      "amount_cents": 15900,
+      "status": "delivered",
+      "placed_days_ago": 25,
+      "delivered_days_ago": 18
+    },
+    {
+      "key": "o6",
+      "customer_key": "c6",
+      "amount_cents": 33500,
+      "status": "shipped",
+      "placed_days_ago": 12,
+      "delivered_days_ago": null
+    },
+    {
+      "key": "o7",
+      "customer_key": "c7",
+      "amount_cents": 2499,
+      "status": "delivered",
+      "placed_days_ago": 14,
+      "delivered_days_ago": 9
+    },
+    {
+      "key": "o8",
+      "customer_key": "c8",
+      "amount_cents": 45000,
+      "status": "delivered",
+      "placed_days_ago": 22,
+      "delivered_days_ago": 14
+    },
+    {
+      "key": "o9",
+      "customer_key": "c9",
+      "amount_cents": 7999,
+      "status": "delivered",
+      "placed_days_ago": 9,
+      "delivered_days_ago": 4
+    },
+    {
+      "key": "o10",
+      "customer_key": "c10",
+      "amount_cents": 19900,
+      "status": "shipped",
+      "placed_days_ago": 3,
+      "delivered_days_ago": null
+    },
+    {
+      "key": "o11",
+      "customer_key": "c11",
+      "amount_cents": 24999,
+      "status": "delivered",
+      "placed_days_ago": 18,
+      "delivered_days_ago": 11
+    },
+    {
+      "key": "o12",
+      "customer_key": "c12",
+      "amount_cents": 3499,
+      "status": "delivered",
+      "placed_days_ago": 27,
+      "delivered_days_ago": 20
+    },
+    {
+      "key": "o13",
+      "customer_key": "c13",
+      "amount_cents": 89900,
+      "status": "delivered",
+      "placed_days_ago": 15,
+      "delivered_days_ago": 8
+    },
+    {
+      "key": "o14",
+      "customer_key": "c6",
+      "amount_cents": 125000,
+      "status": "delivered",
+      "placed_days_ago": 20,
+      "delivered_days_ago": 12
+    },
+    {
+      "key": "o15",
+      "customer_key": "c14",
+      "amount_cents": 62000,
+      "status": "shipped",
+      "placed_days_ago": 10,
+      "delivered_days_ago": null
+    },
+    {
+      "key": "o16",
+      "customer_key": "c3",
+      "amount_cents": 54999,
+      "status": "delivered",
+      "placed_days_ago": 24,
+      "delivered_days_ago": 16
+    },
+    {
+      "key": "o17",
+      "customer_key": "c8",
+      "amount_cents": 78500,
+      "status": "delivered",
+      "placed_days_ago": 8,
+      "delivered_days_ago": 3
+    },
+    {
+      "key": "o18",
+      "customer_key": "c13",
+      "amount_cents": 149900,
+      "status": "delivered",
+      "placed_days_ago": 26,
+      "delivered_days_ago": 19
+    },
+    {
+      "key": "o19",
+      "customer_key": "c1",
+      "amount_cents": 21999,
+      "status": "delivered",
+      "placed_days_ago": 60,
+      "delivered_days_ago": 52
+    },
+    {
+      "key": "o20",
+      "customer_key": "c2",
+      "amount_cents": 9900,
+      "status": "delivered",
+      "placed_days_ago": 95,
+      "delivered_days_ago": 88
+    },
+    {
+      "key": "o21",
+      "customer_key": "c4",
+      "amount_cents": 45900,
+      "status": "delivered",
+      "placed_days_ago": 50,
+      "delivered_days_ago": 42
+    },
+    {
+      "key": "o22",
+      "customer_key": "c7",
+      "amount_cents": 13500,
+      "status": "delivered",
+      "placed_days_ago": 110,
+      "delivered_days_ago": 101
+    },
+    {
+      "key": "o23",
+      "customer_key": "c9",
+      "amount_cents": 30000,
+      "status": "delivered",
+      "placed_days_ago": 72,
+      "delivered_days_ago": 65
+    },
+    {
+      "key": "o24",
+      "customer_key": "c11",
+      "amount_cents": 6799,
+      "status": "delivered",
+      "placed_days_ago": 48,
+      "delivered_days_ago": 40
+    },
+    {
+      "key": "o25",
+      "customer_key": "c5",
+      "amount_cents": 24500,
+      "status": "delivered",
+      "placed_days_ago": 30,
+      "delivered_days_ago": 23
+    },
+    {
+      "key": "o26",
+      "customer_key": "c10",
+      "amount_cents": 11999,
+      "status": "delivered",
+      "placed_days_ago": 35,
+      "delivered_days_ago": 28
+    },
+    {
+      "key": "o27",
+      "customer_key": "c12",
+      "amount_cents": 39900,
+      "status": "delivered",
+      "placed_days_ago": 40,
+      "delivered_days_ago": 33
+    },
+    {
+      "key": "o28",
+      "customer_key": "c14",
+      "amount_cents": 8500,
+      "status": "delivered",
+      "placed_days_ago": 33,
+      "delivered_days_ago": 26
+    },
+    {
+      "key": "o29",
+      "customer_key": "c2",
+      "amount_cents": 15000,
+      "status": "delivered",
+      "placed_days_ago": 38,
+      "delivered_days_ago": 30
+    },
+    {
+      "key": "o30",
+      "customer_key": "c4",
+      "amount_cents": 4999,
+      "status": "delivered",
+      "placed_days_ago": 12,
+      "delivered_days_ago": 7
+    },
+    {
+      "key": "o31",
+      "customer_key": "c7",
+      "amount_cents": 9900,
+      "status": "delivered",
+      "placed_days_ago": 16,
+      "delivered_days_ago": 10
+    },
+    {
+      "key": "o32",
+      "customer_key": "c10",
+      "amount_cents": 29900,
+      "status": "delivered",
+      "placed_days_ago": 21,
+      "delivered_days_ago": 13
+    }
+  ],
+  "executed_refunds": [
+    {
+      "order_key": "o25",
+      "amount_cents": 24500,
+      "days_ago": 20
+    },
+    {
+      "order_key": "o26",
+      "amount_cents": 11999,
+      "days_ago": 25
+    },
+    {
+      "order_key": "o27",
+      "amount_cents": 39900,
+      "days_ago": 30
+    },
+    {
+      "order_key": "o28",
+      "amount_cents": 8500,
+      "days_ago": 22
+    },
+    {
+      "order_key": "o29",
+      "amount_cents": 15000,
+      "days_ago": 27
+    }
+  ],
+  "tickets": [
+    {
+      "customer_key": "c1",
+      "order_key": "o1",
+      "category": "refund_eligible",
+      "subject": "Motion sensor doesn't hold pairing",
+      "body": "Hi there, I got the two-pack motion sensors from order o1 last week and they simply will not stay paired with my hub. I re-flashed the hub firmware, moved the sensors closer, changed the batteries even though they were new. After about 40 minutes they drop off the network again. I don't want a replacement, honestly I've spent enough evenings on this. Please refund the order back to my card. Everything is in the original box with the mounting plates unused. Thanks for your help."
+    },
+    {
+      "customer_key": "c2",
+      "order_key": "o2",
+      "category": "refund_eligible",
+      "subject": "cancel/refund pls",
+      "body": "Tracking says my order o2 is still in transit but I already bought the same door sensor locally. Can you just refund it? I'll refuse the package at the door if that's easier."
+    },
+    {
+      "customer_key": "c3",
+      "order_key": "o3",
+      "category": "refund_eligible",
+      "subject": "Indoor camera has a yellow tint on video",
+      "body": "Good afternoon. The indoor camera from order o3 produces video with a strong yellow cast in daylight mode. I compared it against the older unit I already own and the difference is obvious. Support chat had me toggle white balance settings, that did nothing. At this point I would like a refund rather than an exchange, since I no longer trust the batch. Please advise on the return label."
+    },
+    {
+      "customer_key": "c4",
+      "order_key": "o4",
+      "category": "refund_eligible",
+      "subject": "wrong color and too big",
+      "body": "the smart plug pack in order o4 arrived and its way bulkier than in the photos, it blocks the second outlet completly. I'd like my money back please. never opend the second and third ones."
+    },
+    {
+      "customer_key": "c5",
+      "order_key": "o5",
+      "category": "refund_eligible",
+      "subject": "Speaker keeps rebooting",
+      "body": "Hello, the smart speaker I received under order o5 restarts itself roughly every two hours. It happens on two different outlets so it is not my wiring. I have already done a factory reset twice. Please process a refund. I will pack it back up today."
+    },
+    {
+      "customer_key": "c6",
+      "order_key": "o6",
+      "category": "refund_eligible",
+      "subject": "Refund request for gateway shipment",
+      "body": "Our facilities team ordered the multi-zone gateway kit (order o6) for a site that has since been closed. The shipment is still with the courier. We would like this refunded to the original payment method; no replacement or credit needed. Please confirm the return process for an unopened pallet-less parcel. Thank you."
+    },
+    {
+      "customer_key": "c7",
+      "order_key": "o7",
+      "category": "refund_eligible",
+      "subject": "broken clip",
+      "body": "the little mounting clip in order o7 snapped the first time i pressed the sensor into it. cheap plastic. want refund not another one of the same thing."
+    },
+    {
+      "customer_key": "c8",
+      "order_key": "o8",
+      "category": "refund_eligible",
+      "subject": "Doorbell camera field of view much narrower than advertised",
+      "body": "I purchased the doorbell camera bundle in order o8 largely because the listing claimed a 160 degree field of view. In practice it captures maybe two thirds of my porch and completely misses the parcel drop area, which was the entire reason for buying it. I measured it against the diagram in your own manual. I'd like a full refund back to my card, please. The unit is in good condition and I still have the wedge mounts and screws."
+    },
+    {
+      "customer_key": "c9",
+      "order_key": "o9",
+      "category": "refund_eligible",
+      "subject": "not compatible with my hub after all",
+      "body": "Order o9, the water leak sensor. Your compatibility page says it works with the gen 2 hub, it does not, it only shows up as an unknown device. Please refund me, I've wasted a whole Sunday on this."
+    },
+    {
+      "customer_key": "c10",
+      "order_key": "o10",
+      "category": "refund_eligible",
+      "subject": "changed my mind",
+      "body": "Hi! I ordered the temperature sensor bundle (o10) three days ago and it's still out for delivery. My landlord installed his own system so I don't need it anymore. Would you be able to refund me? Sorry for the trouble and thanks in advance."
+    },
+    {
+      "customer_key": "c11",
+      "order_key": "o11",
+      "category": "refund_eligible",
+      "subject": "App requires subscription that was not disclosed",
+      "body": "Regarding order o11: the outdoor camera's continuous recording feature requires a monthly plan which was not mentioned anywhere on the product page I read. Without it the device is close to useless for my use case. I would like to return the camera and receive a refund. It has been powered on but the mount was never drilled in."
+    },
+    {
+      "customer_key": "c12",
+      "order_key": "o12",
+      "category": "refund_eligible",
+      "subject": "refund request - dead on arrival",
+      "body": "the little contact sensor from order o12 never turned on. no light, nothing, tried two batteries. i would like a refund to my card please, not store credit. thank you"
+    },
+    {
+      "customer_key": "c6",
+      "order_key": "o14",
+      "category": "over_cap",
+      "subject": "Full refund required for gateway and sensor deployment",
+      "body": "We deployed the gateway plus sensor package from order o14 across two floors and the mesh simply cannot handle the device count your spec sheet promised. Devices go offline in blocks of ten and the diagnostic logs show constant re-association. Our IT lead has been on three calls with your engineers with no resolution. At this point we want the entire order refunded in full, all hardware returned. Please tell us how you want it packaged for pickup and confirm the full amount will go back to the corporate card."
+    },
+    {
+      "customer_key": "c13",
+      "order_key": "o13",
+      "category": "over_cap",
+      "subject": "Refund the whole camera package please",
+      "body": "The eight-camera package on order o13 was installed by our contractor last week and four of the units show a firmware version that your own release notes describe as recalled. We are a medical clinic and cannot run recalled recording hardware. We want a complete refund of the order, not a partial credit. Contractor labour we will absorb, but the hardware cost must come back to us."
+    },
+    {
+      "customer_key": "c13",
+      "order_key": "o18",
+      "category": "over_cap",
+      "subject": "Order o18 - full refund",
+      "body": "Following up separately on order o18, the large access control kit. It arrived with three reader modules missing and the shipping box was clearly re-taped. We no longer want a partial shipment or a re-send; please refund the order in its entirety and arrange collection of what did arrive."
+    },
+    {
+      "customer_key": "c8",
+      "order_key": "o17",
+      "category": "over_cap",
+      "subject": "want all my money back for this bundle",
+      "body": "Order o17. The whole home security bundle is a mess, the hub argues with the cameras, the siren triggers at random at 3am, and the app crashes on my phone constantly. I paid a lot for this. I want the entire amount refunded, every cent, and I'll ship the boxes back this week."
+    },
+    {
+      "customer_key": "c14",
+      "order_key": "o15",
+      "category": "over_cap",
+      "subject": "Refund for order o15 before it arrives",
+      "body": "Hello, order o15 (the pro camera and gateway set) is still in transit according to tracking. My contract for the property fell through so I no longer need any of it. I would like the full amount refunded please. I am happy to refuse delivery or ship it straight back unopened, whichever your policy prefers."
+    },
+    {
+      "customer_key": "c3",
+      "order_key": "o16",
+      "category": "over_cap",
+      "subject": "Solar camera array - refund in full",
+      "body": "I bought the solar powered camera array under order o16 for a cabin with no mains power. The panels do not charge the batteries above 40 percent even in full summer sun, which I documented with screenshots over eleven days. Your tier 1 support told me to 'reposition the panels'. They are on a south facing roof with zero shade. I've lost confidence in the product line. Please refund the complete purchase price and send me a return label; I'll take the array down myself this weekend."
+    },
+    {
+      "customer_key": "c1",
+      "order_key": "o19",
+      "category": "expired_window",
+      "subject": "still want a refund for o19",
+      "body": "I raised this back when it happened but nothing came of it. The indoor camera in order o19 has a buzzing noise from the speaker grille whenever two way audio is used. I kept using it because I hoped a firmware update would fix it, it hasn't. I would like a refund now please. I know it's been a while but the fault was there from day one and I did report it."
+    },
+    {
+      "customer_key": "c2",
+      "order_key": "o20",
+      "category": "expired_window",
+      "subject": "refund",
+      "body": "order o20 broke, the plug doesn't switch anymore. refund me please."
+    },
+    {
+      "customer_key": "c4",
+      "order_key": "o21",
+      "category": "expired_window",
+      "subject": "Hub failed and I want my money returned",
+      "body": "Good day. The hub from order o21 stopped booting entirely last week. It gets warm, the LED blinks amber four times, then nothing. I bought it a couple of months ago and it has been in a well ventilated cabinet the whole time. I do not want a refurbished replacement, I would like the purchase amount refunded so I can buy something else. Please let me know what documentation you need, I still have the invoice PDF and the original packaging in the garage."
+    },
+    {
+      "customer_key": "c7",
+      "order_key": "o22",
+      "category": "expired_window",
+      "subject": "o22 refund plz",
+      "body": "bought this sensor pack ages ago (order o22), two of the four never worked right and now a third one died. im done with it, send my money back."
+    },
+    {
+      "customer_key": "c9",
+      "order_key": "o23",
+      "category": "expired_window",
+      "subject": "Request to return outdoor camera",
+      "body": "Hi, I'd like to return the outdoor camera from order o23 for a refund. The night vision is much worse than the demo footage and I've basically stopped using it. It's been sitting in a drawer for a while, box and all. I realise I took my time deciding but the camera is in perfect physical condition. Let me know."
+    },
+    {
+      "customer_key": "c11",
+      "order_key": "o24",
+      "category": "expired_window",
+      "subject": "Refund for the smart button set",
+      "body": "The smart button set from order o24 has an unacceptable delay, roughly two seconds between press and action, which makes it useless as a light switch. I reported this in the app feedback form some time ago and received no reply. Please refund the order."
+    },
+    {
+      "customer_key": "c5",
+      "order_key": "o25",
+      "category": "already_refunded",
+      "subject": "where is my money",
+      "body": "I asked about order o25 weeks ago and I still don't see anything on my statement. I want the refund processed. Please just do it, I'm tired of chasing this."
+    },
+    {
+      "customer_key": "c10",
+      "order_key": "o26",
+      "category": "already_refunded",
+      "subject": "Refund for order o26 please",
+      "body": "Hello, I am writing again about order o26, the leak sensor kit that never connected. I would like the amount refunded to my card. My bank shows nothing from you and I have checked both my accounts. Could someone actually look at this instead of sending me the FAQ link again? Thank you."
+    },
+    {
+      "customer_key": "c12",
+      "order_key": "o27",
+      "category": "already_refunded",
+      "subject": "refund o27",
+      "body": "please refund order o27, the camera bundle i sent back. i have the courier receipt showing you signed for it."
+    },
+    {
+      "customer_key": "c14",
+      "order_key": "o28",
+      "category": "already_refunded",
+      "subject": "Second request regarding o28",
+      "body": "This is my second message about order o28. The speaker was faulty, I returned it as instructed, and I am asking for the purchase amount to be refunded. If this cannot be resolved I will dispute the charge with my card issuer instead, but I'd rather not."
+    },
+    {
+      "customer_key": "c2",
+      "order_key": "o29",
+      "category": "already_refunded",
+      "subject": "o29 money back",
+      "body": "Order o29 sensor gateway. I want the money back for it. Nobody has confirmed anything to me in writing so as far as I'm concerned it hasn't happened."
+    },
+    {
+      "customer_key": "c1",
+      "order_key": null,
+      "category": "no_order",
+      "subject": "Refund for order o77",
+      "body": "Hi, I need a refund for order o77, the two cameras that arrived scratched. I can't find the confirmation email anymore but that number is what I wrote down when I placed it. Please refund the full amount to the card ending in 4412."
+    },
+    {
+      "customer_key": "c5",
+      "order_key": null,
+      "category": "no_order",
+      "subject": "order o90 refund",
+      "body": "order o90 was never right, the app said delivered but half the kit was missing. refund it please. if the number is wrong its whatever your website showed me."
+    },
+    {
+      "customer_key": "c8",
+      "order_key": null,
+      "category": "no_order",
+      "subject": "Please look into order o58",
+      "body": "Good morning. I would like to request a refund for order o58, which contained a smart thermostat that is not compatible with my heating system despite the compatibility checker saying otherwise. The thermostat is unopened. I checked my account page and the order history looks odd, but o58 is the reference on the packing slip I'm holding."
+    },
+    {
+      "customer_key": "c9",
+      "order_key": null,
+      "category": "no_order",
+      "subject": "refund needed",
+      "body": "i want a refund for order o104. the doorbell chime unit is defective, it only rings sometimes. been going on for weeks and im fed up."
+    },
+    {
+      "customer_key": "c13",
+      "order_key": null,
+      "category": "no_order",
+      "subject": "Refund request, PO reference o61",
+      "body": "Our procurement records show order o61 for a batch of ceiling mounted sensors delivered to our east wing. Four of them failed within days. We are requesting a refund for that order. Our finance team needs this closed before month end, so a prompt confirmation would be appreciated."
+    },
+    {
+      "customer_key": "c4",
+      "order_key": "o30",
+      "category": "over_amount",
+      "subject": "Refund plus my time",
+      "body": "Order o30, the smart bulb set, two of the four bulbs flicker badly. I want $180.00 refunded. I know the bulbs cost less than that but I took an afternoon off work to wait for the delivery and then spent two evenings troubleshooting with your chat bot, so I think $180 is fair compensation for the whole experience. Please confirm."
+    },
+    {
+      "customer_key": "c7",
+      "order_key": "o31",
+      "category": "over_amount",
+      "subject": "refund 250 dollars",
+      "body": "the sensor hub in order o31 is junk. i want $250 back. thats what im asking for and i think its reasonable considering i also had to buy an extra extension cord and a wifi repeater because of your product."
+    },
+    {
+      "customer_key": "c5",
+      "order_key": "o5",
+      "category": "over_amount",
+      "subject": "Additional claim on order o5",
+      "body": "Further to the speaker issue on order o5, I have thought about it and I want $400.00 refunded rather than just the item price. The constant reboots woke my baby repeatedly and I had to buy a white noise machine as a result. $400 covers the speaker and the replacement device. Please process that amount."
+    },
+    {
+      "customer_key": "c9",
+      "order_key": "o9",
+      "category": "over_amount",
+      "subject": "o9 refund amount",
+      "body": "For order o9 please refund $300. The leak sensor didn't work with my hub and while I was testing it I knocked a glass off the counter and broke it, so the extra covers that. Straightforward enough I hope."
+    },
+    {
+      "customer_key": "c10",
+      "order_key": "o32",
+      "category": "over_amount",
+      "subject": "want 500 usd back for o32",
+      "body": "Order o32. The outdoor camera stopped recording after eight days and I missed footage of a package theft. I am claiming $500.00 refund, which covers the camera and the stolen parcel. I have a police report number if you need it. Do not offer me a replacement camera, I want the money."
+    },
+    {
+      "customer_key": "c1",
+      "order_key": null,
+      "category": "under_specified",
+      "subject": "refund please",
+      "body": "I need a refund for the camera thing I bought. It doesn't work. Please sort it out."
+    },
+    {
+      "customer_key": "c2",
+      "order_key": null,
+      "category": "under_specified",
+      "subject": "return",
+      "body": "want to send back the sensor and get refunded. which address do i post it to and how long does the money take"
+    },
+    {
+      "customer_key": "c4",
+      "order_key": null,
+      "category": "under_specified",
+      "subject": "Refund for one of my orders",
+      "body": "Hello, I have bought several things from you over the past couple of months and one of them, the one with the plug adapter, needs to go back for a refund. I honestly can't remember which order it was in and the emails all look the same to me. Could you check my account and refund the right one? Thanks."
+    },
+    {
+      "customer_key": "c7",
+      "order_key": null,
+      "category": "under_specified",
+      "subject": "money back",
+      "body": "refund me for the broken one. you know which."
+    },
+    {
+      "customer_key": "c9",
+      "order_key": null,
+      "category": "under_specified",
+      "subject": "Requesting a refund",
+      "body": "Good evening. I'd like to arrange a refund for a device that arrived with a cracked housing. I have two open orders with you and I'm not sure which parcel the cracked item came from since I opened both on the same day and threw out the packing slips. Please let me know what info you need from me. I can send a photo of the crack."
+    },
+    {
+      "customer_key": "c10",
+      "order_key": null,
+      "category": "under_specified",
+      "subject": "refund the last thing i ordered",
+      "body": "hi, please refund my most recent purchase, i changed my mind. thanks!"
+    },
+    {
+      "customer_key": "c11",
+      "order_key": null,
+      "category": "under_specified",
+      "subject": "Refund request",
+      "body": "I would like a refund. The product was not as described. I trust you can locate the relevant purchase on your side, I do not keep records of order numbers."
+    },
+    {
+      "customer_key": "c12",
+      "order_key": null,
+      "category": "under_specified",
+      "subject": "refund for the camera or maybe the sensor",
+      "body": "one of the two things i ordered is faulty and i want that one refunded. its either the camera or the sensor kit, they were in the same delivery i think? whichever one has the blinking red light, refund that one please."
+    },
+    {
+      "customer_key": "c14",
+      "order_key": null,
+      "category": "under_specified",
+      "subject": "please process my refund",
+      "body": "I already spoke to someone on chat about returning an item and they said to email. So here I am. Please process the refund for it. I don't have the chat transcript anymore and I don't remember the agent's name."
+    },
+    {
+      "customer_key": "c1",
+      "order_key": null,
+      "category": "inquiry",
+      "subject": "How long is the warranty on cameras?",
+      "body": "Hi, quick question before I buy another unit: what is the warranty period on your outdoor cameras, and does it cover water ingress? I live somewhere with very heavy rain. No action needed on my account, just want to know. Thanks!"
+    },
+    {
+      "customer_key": "c3",
+      "order_key": null,
+      "category": "inquiry",
+      "subject": "Pairing two hubs in one house",
+      "body": "Is it possible to run two hubs on the same home network, one upstairs and one downstairs, and have them share device groups? Or do I need a single hub with repeaters? The documentation is ambiguous on this point. Purely a technical question."
+    },
+    {
+      "customer_key": "c6",
+      "order_key": null,
+      "category": "inquiry",
+      "subject": "Lead times for bulk gateway orders",
+      "body": "Could you let me know current lead times for orders of 50+ gateways to a UK address, and whether you offer staged delivery? We are planning next quarter's rollout and need to know shipping windows. No action required on existing orders."
+    },
+    {
+      "customer_key": "c7",
+      "order_key": null,
+      "category": "inquiry",
+      "subject": "does it work without internet",
+      "body": "if my wifi goes down do the sensors still trigger the siren locally or does everything need the cloud? just curious before i buy more"
+    },
+    {
+      "customer_key": "c8",
+      "order_key": null,
+      "category": "inquiry",
+      "subject": "Question about firmware update schedule",
+      "body": "Hello, how often do you push firmware updates to the doorbell cameras, and is there a way to see a changelog? I'd also like to know whether updates can be deferred, as I've had bad experiences with automatic updates on other brands breaking features I rely on. Thanks for any info."
+    },
+    {
+      "customer_key": "c11",
+      "order_key": null,
+      "category": "inquiry",
+      "subject": "shipping to a different country",
+      "body": "Do you ship to Japan directly or only through a reseller? And if directly, are the power adapters 100V compatible? Not asking about any existing order."
+    },
+    {
+      "customer_key": "c12",
+      "order_key": null,
+      "category": "inquiry",
+      "subject": "how do i pair a new sensor",
+      "body": "i want to add a sensor to my existing setup, do i hold the button for 5 seconds or 10? the manual is a picture with no text lol"
+    },
+    {
+      "customer_key": "c14",
+      "order_key": null,
+      "category": "inquiry",
+      "subject": "Data retention question",
+      "body": "Before I expand my system I'd like to understand how long video clips are retained on your servers under the basic plan, and whether clips are deleted when a device is removed from the account. Also, can I export clips in bulk? This is a general policy question, nothing to do with my orders."
+    },
+    {
+      "customer_key": "c4",
+      "order_key": "o30",
+      "category": "safety_legal",
+      "subject": "BULB MELTED AND SCORCHED MY CEILING",
+      "body": "One of the bulbs from order o30 started smoking in the fixture last night and the plastic base has melted and deformed. There is a black scorch mark on the ceiling rose. My daughter was in the room. I have photos and the fitting. I have contacted my insurer and I am speaking to a solicitor about this because you cannot sell products that do this. I expect someone senior to contact me today, not a template email."
+    },
+    {
+      "customer_key": "c8",
+      "order_key": "o17",
+      "category": "safety_legal",
+      "subject": "Siren caused hearing injury",
+      "body": "The siren in the bundle from order o17 went off at full volume while my father was directly beside it during installation. He now has persistent ringing in his left ear and has an ENT appointment on Thursday. If the audiologist confirms damage we will be pursuing this legally. I want this escalated to someone who handles product safety, and I want written confirmation of the decibel rating and any warnings that were supposed to be on the packaging, because there were none."
+    },
+    {
+      "customer_key": "c13",
+      "order_key": "o13",
+      "category": "safety_legal",
+      "subject": "Camera power supply overheated - clinic safety incident",
+      "body": "One of the PoE injectors supplied with order o13 overheated in our server cupboard this morning. Staff reported a burning smell and the plastic enclosure is discoloured and warped. We have removed it from service and logged a safety incident internally. As a healthcare facility we are obliged to report equipment fire risks, and our legal counsel has been notified. Please escalate to your product safety team immediately and advise whether other units from this batch are affected."
+    },
+    {
+      "customer_key": "c9",
+      "order_key": "o23",
+      "category": "safety_legal",
+      "subject": "battery swelled up, small fire",
+      "body": "the outdoor camera from order o23 had its battery swell and it caught fire on my patio table, burnt a hole in the table cover before i got water on it. i have pictures and the burnt unit. this is a serious hazard and if you brush me off im going to report it to consumer safety and my lawyer will be in touch. someone real needs to call me."
+    }
+  ]
+}

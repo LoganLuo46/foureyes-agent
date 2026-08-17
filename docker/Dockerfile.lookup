@@ -1,0 +1,11 @@
+FROM node:20-slim
+WORKDIR /app
+COPY mcp_lookup/package.json mcp_lookup/package-lock.json ./
+RUN npm ci
+COPY mcp_lookup/tsconfig.json ./
+COPY mcp_lookup/src/ ./src/
+RUN npx tsc
+COPY policy/ /app/policy/
+ENV POLICY_PATH=/app/policy/support_policy.md
+EXPOSE 8101
+CMD ["node", "dist/index.js"]

@@ -1,0 +1,136 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  # Deterministic checks: no LLM calls, no API keys. Runs on every push.
+  # This tier protects the project's central claim (topology + business guardrails + layer-1 detection).
+  structural:
+    name: guardrails · topology · eval teeth
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: foureyes
+          POSTGRES_PASSWORD: foureyes
+          POSTGRES_DB: foureyes
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U foureyes -d foureyes"
+          --health-interval 3s --health-timeout 3s --health-retries 15
+    env:
+      DATABASE_URL: postgresql://foureyes:foureyes@localhost:5432/foureyes
+      DATABASE_URL_RO: postgresql://foureyes_ro:foureyes_ro@localhost:5432/foureyes
+      REFUND_CAP_CENTS: "50000"
+      REFUND_WINDOW_DAYS: "30"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - uses: actions/setup-node@v4
+        with: { node-version: "20" }
+
+      - name: Install Python deps
+        run: |
+          pip install anthropic google-genai "psycopg[binary]" langgraph \
+            langgraph-checkpoint-postgres mcp fastapi uvicorn langfuse \
+            pytest python-dotenv pyyaml httpx pydantic
+
+      - name: Apply schema (creates read-only role too)
+        run: psql "$DATABASE_URL" -f db/schema.sql
+        env: { PGPASSWORD: foureyes }
+
+      - name: Build and start ticket-lookup (read-only MCP server)
+        run: |
+          cd mcp_lookup && npm ci && npx tsc && cd ..
+          node mcp_lookup/dist/index.js &
+          for i in $(seq 1 20); do curl -sf localhost:8101/healthz && break || sleep 1; done
+
+      - name: Start ticket-action (write-gated MCP server)
+        run: |
+          python mcp_action/server.py &
+          for i in $(seq 1 20); do
+            curl -sf -o /dev/null -X POST localhost:8102/mcp \
+              -H 'content-type: application/json' \
+              -H 'accept: application/json, text/event-stream' \
+              -d '{"jsonrpc":"2.0","id":1,"method":"tools/list"}' && break || sleep 1
+          done
+
+      # Three-layer defence + topology + consent binding + guardrail backstop, all deterministic
+      - name: Unit tests (guardrails, topology, consent binding, layer-1 guards)
+        run: pytest tests/ -q
+
+      # spec §9.1 hard requirement: the evals must have teeth — break the approval edge, they go red
+      - name: Verify trajectory evals have teeth
+        run: python scripts/verify_eval_teeth.py --structural-only
+
+  # Full evals need an API key and cost real money (100+ model calls), so they are
+  # manual-dispatch only. Everything that protects the safety claims is in `structural`
+  # above, which runs on every push with no key and no spend.
+  evals:
+    name: trajectory evals + benchmark (LLM)
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch'
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: foureyes
+          POSTGRES_PASSWORD: foureyes
+          POSTGRES_DB: foureyes
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U foureyes -d foureyes"
+          --health-interval 3s --health-timeout 3s --health-retries 15
+    env:
+      DATABASE_URL: postgresql://foureyes:foureyes@localhost:5432/foureyes
+      DATABASE_URL_RO: postgresql://foureyes_ro:foureyes_ro@localhost:5432/foureyes
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+      REFUND_CAP_CENTS: "50000"
+      REFUND_WINDOW_DAYS: "30"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - uses: actions/setup-node@v4
+        with: { node-version: "20" }
+      - name: Install Python deps
+        run: |
+          pip install anthropic google-genai "psycopg[binary]" langgraph \
+            langgraph-checkpoint-postgres mcp fastapi uvicorn langfuse \
+            pytest python-dotenv pyyaml httpx pydantic
+      - name: Apply schema
+        run: psql "$DATABASE_URL" -f db/schema.sql
+        env: { PGPASSWORD: foureyes }
+      - name: Start MCP servers
+        run: |
+          cd mcp_lookup && npm ci && npx tsc && cd ..
+          node mcp_lookup/dist/index.js &
+          python mcp_action/server.py &
+          sleep 5
+      - name: Trajectory evals (29 scenarios)
+        run: pytest evals/test_trajectories.py -q
+      - name: Action-selection benchmark (100 labeled tickets)
+        run: pytest evals/test_benchmark.py -q -s
+      - name: Upload eval reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eval-reports
+          path: |
+            evals/benchmark/report.json
+            evals/redteam/report.json
+
+  console:
+    name: console typecheck + build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "20" }
+      - run: cd console && npm ci && npm run build

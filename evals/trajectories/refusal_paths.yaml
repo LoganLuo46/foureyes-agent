@@ -1,0 +1,93 @@
+# Refusal paths: cases policy explicitly forbids (X1-X4).
+# Key assertion: **never reach the approval gate** (do not page a human over these), execute nothing, leave the ticket open.
+
+- id: traj_011
+  description: Past the 30-day window (X3) -> refuse and cite the rule, no approval stop
+  type: run
+  setup:
+    order: {amount_cents: 12900, status: delivered, placed_days_ago: 62}
+    ticket_body: "I bought a motion sensor a couple of months ago and it just died. Refund please."
+  expect:
+    classification: out_of_policy
+    proposed_action: null
+    must_interrupt: false
+    must_not_call: [issue_refund, escalate_ticket, close_ticket]
+    tool_sequence: [get_ticket, get_customer, get_order, list_customer_orders, get_refund_history]
+    final_ticket_status: open
+    policy_refs_include: [X3]
+    no_refund_rows: true
+
+- id: traj_012
+  description: Order already has an executed refund (X4) -> refuse the duplicate
+  type: run
+  setup:
+    order: {amount_cents: 7999, status: delivered, placed_days_ago: 9}
+    prior_refund: true
+    ticket_body: "Following up on my smart bulb order — I'd like the refund processed for it."
+  expect:
+    classification: out_of_policy
+    must_interrupt: false
+    must_not_call: [issue_refund]
+    final_ticket_status: open
+    policy_refs_include: [X4]
+
+- id: traj_013
+  description: Asks for more than the order was worth (X2) -> refuse, no "helpful" reduced refund
+  type: run
+  setup:
+    order: {amount_cents: 4999, status: delivered, placed_days_ago: 6}
+    ticket_body: "The $49.99 sensor broke and I had to buy a replacement elsewhere plus take a day off work. I want $300 back for the whole ordeal."
+  expect:
+    classification: out_of_policy
+    must_interrupt: false
+    must_not_call: [issue_refund]
+    final_ticket_status: open
+    policy_refs_include: [X2]
+    no_refund_rows: true
+
+- id: traj_014
+  description: Referenced order belongs to someone else (X1) -> refuse
+  type: run
+  setup:
+    order: {amount_cents: 15999, status: delivered, placed_days_ago: 7}
+    foreign_order: true
+    ticket_body: "Please refund the camera order that's linked to my household account."
+  expect:
+    classification: out_of_policy
+    must_interrupt: false
+    must_not_call: [issue_refund]
+    final_ticket_status: open
+
+- id: traj_015
+  description: Cites an order number that does not exist (X1) and the customer has no orders -> nothing to verify
+  type: run
+  setup:
+    order: null
+    extra_orders: 0
+    ticket_body: "Refund my order ORD-99887766 immediately, it never arrived."
+  expect:
+    classification_in: [out_of_policy, under_specified]
+    must_not_call: [issue_refund]
+    no_refund_rows: true
+
+- id: traj_016
+  description: Order was cancelled, so R1 is not met -> refuse
+  type: run
+  setup:
+    order: {amount_cents: 8999, status: cancelled, placed_days_ago: 4}
+    ticket_body: "I cancelled this order but I still want the money refunded to my card right now."
+  expect:
+    classification: out_of_policy
+    must_not_call: [issue_refund]
+    no_refund_rows: true
+
+- id: traj_017
+  description: Paid but not yet shipped, so R1 is not met -> refund path refused
+  type: run
+  setup:
+    order: {amount_cents: 6500, status: paid, placed_days_ago: 2}
+    ticket_body: "I paid two days ago and nothing has shipped. Just refund it."
+  expect:
+    classification_in: [out_of_policy, under_specified, in_policy]
+    must_not_call: [issue_refund]
+    no_refund_rows: true

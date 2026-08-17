@@ -1,0 +1,76 @@
+:root {
+  --bg: #0f1115;
+  --card: #171a21;
+  --line: #262b36;
+  --text: #e6e8ec;
+  --dim: #9aa3b2;
+  --accent: #6ea8fe;
+  --ok: #3fb950;
+  --warn: #d29922;
+  --danger: #f85149;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); }
+.page { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; }
+
+header { display: flex; justify-content: space-between; align-items: flex-end;
+  border-bottom: 1px solid var(--line); padding-bottom: 16px; margin-bottom: 24px; }
+h1 { margin: 0; font-size: 26px; letter-spacing: -0.5px; }
+.sub { margin: 4px 0 0; color: var(--dim); font-size: 13px; }
+.who { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--dim); }
+.who input { background: var(--card); border: 1px solid var(--line); color: var(--text);
+  border-radius: 6px; padding: 5px 8px; width: 110px; }
+.count { background: var(--card); border: 1px solid var(--line); border-radius: 999px;
+  padding: 4px 10px; color: var(--accent); }
+
+.error { background: #3d1418; border: 1px solid var(--danger); color: #ffb4ae;
+  padding: 10px 14px; border-radius: 8px; margin-bottom: 16px; font-size: 13px; }
+.empty { text-align: center; color: var(--dim); padding: 60px 0; }
+.empty code { display: block; margin-top: 12px; background: var(--card); padding: 10px;
+  border-radius: 6px; font-size: 12px; color: var(--accent); }
+
+main { display: flex; flex-direction: column; gap: 18px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+  padding: 18px 20px; }
+.card.refund { border-left: 3px solid var(--accent); }
+.card.escalate { border-left: 3px solid var(--warn); }
+.card.close { border-left: 3px solid var(--dim); }
+
+.card-head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+.badge { font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 6px;
+  background: #1d2430; color: var(--accent); }
+.badge.escalate { color: var(--warn); }
+.badge.close { color: var(--dim); }
+.amount { font-size: 20px; font-weight: 650; }
+.customer { margin-left: auto; color: var(--dim); font-size: 13px; }
+.customer em { font-style: normal; background: #1d2430; padding: 2px 6px;
+  border-radius: 4px; margin-left: 6px; font-size: 11px; }
+
+.flags { background: #3a2a12; border: 1px solid var(--warn); color: #f0c674;
+  padding: 8px 12px; border-radius: 8px; font-size: 12px; margin-bottom: 12px; }
+.flags code { background: rgba(0,0,0,.3); padding: 2px 6px; border-radius: 4px; margin-right: 6px; }
+
+section { margin-bottom: 14px; }
+h3 { font-size: 11px; text-transform: uppercase; letter-spacing: .8px;
+  color: var(--dim); margin: 0 0 6px; font-weight: 600; }
+h3 em { font-style: normal; color: var(--warn); text-transform: none; letter-spacing: 0; }
+.reasoning { margin: 0; font-size: 13.5px; line-height: 1.55; }
+.ticket-subject { margin: 0 0 4px; font-weight: 600; font-size: 13.5px; }
+.ticket-body { margin: 0; font-size: 13px; color: var(--dim); line-height: 1.55;
+  white-space: pre-wrap; border-left: 2px solid var(--line); padding-left: 10px; }
+.evidence { margin: 0; padding-left: 18px; font-size: 13px; color: var(--dim); }
+
+.actions { display: flex; align-items: center; gap: 10px; margin-top: 16px; }
+button { font: inherit; font-size: 13px; font-weight: 600; padding: 8px 18px;
+  border-radius: 7px; border: 1px solid var(--line); cursor: pointer; }
+button:disabled { opacity: .5; cursor: default; }
+.approve { background: var(--ok); border-color: var(--ok); color: #06210c; }
+.reject { background: transparent; color: var(--danger); border-color: var(--danger); }
+.actions a { margin-left: auto; color: var(--accent); font-size: 12.5px; text-decoration: none; }
+
+.result { margin-top: 14px; padding: 12px 14px; border-radius: 8px; font-size: 13px;
+  background: #12241a; border: 1px solid var(--ok); }
+.result.blocked { background: #3d1418; border-color: var(--danger); }
+.result .err { margin-top: 6px; color: #ffb4ae; font-size: 12px; }
+.result .final { margin-top: 6px; color: var(--dim); font-size: 12px; }

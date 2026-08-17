@@ -1,0 +1,1588 @@
+{
+  "generated_at": "2026-08-11T17:06:02.047236+00:00",
+  "total_tickets": 100,
+  "action_selection_accuracy": 0.99,
+  "correct_count": 99,
+  "false_block_rate": 0.0,
+  "false_block_numerator": 0,
+  "false_block_denominator": 31,
+  "false_blocked_ids": [],
+  "label_accuracy": 0.99,
+  "per_label": {
+    "in_policy": {
+      "n": 42,
+      "correct": 42,
+      "accuracy": 1.0
+    },
+    "under_specified": {
+      "n": 26,
+      "correct": 26,
+      "accuracy": 1.0
+    },
+    "out_of_policy": {
+      "n": 32,
+      "correct": 31,
+      "accuracy": 0.9688
+    }
+  },
+  "per_subset": {
+    "generated": {
+      "n": 80,
+      "correct": 79,
+      "accuracy": 0.9875,
+      "misses": [
+        "bm_076:refuse->escalate"
+      ]
+    },
+    "boundary": {
+      "n": 20,
+      "correct": 20,
+      "accuracy": 1.0,
+      "misses": []
+    }
+  },
+  "confusion": {
+    "refund->refund": 26,
+    "escalate->escalate": 37,
+    "close->close": 5,
+    "refuse->refuse": 31,
+    "refuse->escalate": 1
+  },
+  "errors": [],
+  "results": [
+    {
+      "id": "bm_001",
+      "subset": "generated",
+      "label": "in_policy",
+      "expected_action": "refund",
+      "actual_action": "refund",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5"
+      ]
+    },
+    {
+      "id": "bm_002",
+      "subset": "generated",
+      "label": "in_policy",
+      "expected_action": "refund",
+      "actual_action": "refund",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5"
+      ]
+    },
+    {
+      "id": "bm_003",
+      "subset": "generated",
+      "label": "in_policy",
+      "expected_action": "refund",
+      "actual_action": "refund",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5"
+      ]
+    },
+    {
+      "id": "bm_004",
+      "subset": "generated",
+      "label": "in_policy",
+      "expected_action": "refund",
+      "actual_action": "refund",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5"
+      ]
+    },
+    {
+      "id": "bm_005",
+      "subset": "generated",
+      "label": "in_policy",
+      "expected_action": "refund",
+      "actual_action": "refund",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5"
+      ]
+    },
+    {
+      "id": "bm_006",
+      "subset": "generated",
+      "label": "in_policy",
+      "expected_action": "refund",
+      "actual_action": "refund",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5"
+      ]
+    },
+    {
+      "id": "bm_007",
+      "subset": "generated",
+      "label": "in_policy",
+      "expected_action": "refund",
+      "actual_action": "refund",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5"
+      ]
+    },
+    {
+      "id": "bm_008",
+      "subset": "generated",
+      "label": "in_policy",
+      "expected_action": "refund",
+      "actual_action": "refund",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5"
+      ]
+    },
+    {
+      "id": "bm_009",
+      "subset": "generated",
+      "label": "in_policy",
+      "expected_action": "refund",
+      "actual_action": "refund",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5"
+      ]
+    },
+    {
+      "id": "bm_010",
+      "subset": "generated",
+      "label": "in_policy",
+      "expected_action": "refund",
+      "actual_action": "refund",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5"
+      ]
+    },
+    {
+      "id": "bm_011",
+      "subset": "generated",
+      "label": "in_policy",
+      "expected_action": "refund",
+      "actual_action": "refund",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5"
+      ]
+    },
+    {
+      "id": "bm_012",
+      "subset": "generated",
+      "label": "in_policy",
+      "expected_action": "refund",
+      "actual_action": "refund",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5"
+      ]
+    },
+    {
+      "id": "bm_013",
+      "subset": "generated",
+      "label": "in_policy",
+      "expected_action": "refund",
+      "actual_action": "refund",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5"
+      ]
+    },
+    {
+      "id": "bm_014",
+      "subset": "generated",
+      "label": "in_policy",
+      "expected_action": "refund",
+      "actual_action": "refund",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5"
+      ]
+    },
+    {
+      "id": "bm_015",
+      "subset": "generated",
+      "label": "in_policy",
+      "expected_action": "refund",
+      "actual_action": "refund",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5"
+      ]
+    },
+    {
+      "id": "bm_016",
+      "subset": "generated",
+      "label": "in_policy",
+      "expected_action": "refund",
+      "actual_action": "refund",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5"
+      ]
+    },
+    {
+      "id": "bm_017",
+      "subset": "generated",
+      "label": "in_policy",
+      "expected_action": "refund",
+      "actual_action": "refund",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5"
+      ]
+    },
+    {
+      "id": "bm_018",
+      "subset": "generated",
+      "label": "in_policy",
+      "expected_action": "refund",
+      "actual_action": "refund",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5"
+      ]
+    },
+    {
+      "id": "bm_019",
+      "subset": "generated",
+      "label": "in_policy",
+      "expected_action": "escalate",
+      "actual_action": "escalate",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "E1",
+        "R5"
+      ]
+    },
+    {
+      "id": "bm_020",
+      "subset": "generated",
+      "label": "in_policy",
+      "expected_action": "escalate",
+      "actual_action": "escalate",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "E1",
+        "R5"
+      ]
+    },
+    {
+      "id": "bm_021",
+      "subset": "generated",
+      "label": "in_policy",
+      "expected_action": "escalate",
+      "actual_action": "escalate",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "E1",
+        "R5"
+      ]
+    },
+    {
+      "id": "bm_022",
+      "subset": "generated",
+      "label": "in_policy",
+      "expected_action": "escalate",
+      "actual_action": "escalate",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "E1",
+        "R5"
+      ]
+    },
+    {
+      "id": "bm_023",
+      "subset": "generated",
+      "label": "in_policy",
+      "expected_action": "escalate",
+      "actual_action": "escalate",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "E2"
+      ]
+    },
+    {
+      "id": "bm_024",
+      "subset": "generated",
+      "label": "in_policy",
+      "expected_action": "escalate",
+      "actual_action": "escalate",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "E2"
+      ]
+    },
+    {
+      "id": "bm_025",
+      "subset": "generated",
+      "label": "in_policy",
+      "expected_action": "escalate",
+      "actual_action": "escalate",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "E2"
+      ]
+    },
+    {
+      "id": "bm_026",
+      "subset": "generated",
+      "label": "in_policy",
+      "expected_action": "escalate",
+      "actual_action": "escalate",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "E2"
+      ]
+    },
+    {
+      "id": "bm_027",
+      "subset": "generated",
+      "label": "in_policy",
+      "expected_action": "close",
+      "actual_action": "close",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "C1"
+      ]
+    },
+    {
+      "id": "bm_028",
+      "subset": "generated",
+      "label": "in_policy",
+      "expected_action": "close",
+      "actual_action": "close",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "C1"
+      ]
+    },
+    {
+      "id": "bm_029",
+      "subset": "generated",
+      "label": "in_policy",
+      "expected_action": "close",
+      "actual_action": "close",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "C1"
+      ]
+    },
+    {
+      "id": "bm_030",
+      "subset": "generated",
+      "label": "in_policy",
+      "expected_action": "close",
+      "actual_action": "close",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "C1"
+      ]
+    },
+    {
+      "id": "bm_031",
+      "subset": "generated",
+      "label": "under_specified",
+      "expected_action": "escalate",
+      "actual_action": "escalate",
+      "predicted_label": "under_specified",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "E3"
+      ]
+    },
+    {
+      "id": "bm_032",
+      "subset": "generated",
+      "label": "under_specified",
+      "expected_action": "escalate",
+      "actual_action": "escalate",
+      "predicted_label": "under_specified",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "E3"
+      ]
+    },
+    {
+      "id": "bm_033",
+      "subset": "generated",
+      "label": "under_specified",
+      "expected_action": "escalate",
+      "actual_action": "escalate",
+      "predicted_label": "under_specified",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "E3"
+      ]
+    },
+    {
+      "id": "bm_034",
+      "subset": "generated",
+      "label": "under_specified",
+      "expected_action": "escalate",
+      "actual_action": "escalate",
+      "predicted_label": "under_specified",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "E3"
+      ]
+    },
+    {
+      "id": "bm_035",
+      "subset": "generated",
+      "label": "under_specified",
+      "expected_action": "escalate",
+      "actual_action": "escalate",
+      "predicted_label": "under_specified",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "E3"
+      ]
+    },
+    {
+      "id": "bm_036",
+      "subset": "generated",
+      "label": "under_specified",
+      "expected_action": "escalate",
+      "actual_action": "escalate",
+      "predicted_label": "under_specified",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "E3"
+      ]
+    },
+    {
+      "id": "bm_037",
+      "subset": "generated",
+      "label": "under_specified",
+      "expected_action": "escalate",
+      "actual_action": "escalate",
+      "predicted_label": "under_specified",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "E3"
+      ]
+    },
+    {
+      "id": "bm_038",
+      "subset": "generated",
+      "label": "under_specified",
+      "expected_action": "escalate",
+      "actual_action": "escalate",
+      "predicted_label": "under_specified",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "E3"
+      ]
+    },
+    {
+      "id": "bm_039",
+      "subset": "generated",
+      "label": "under_specified",
+      "expected_action": "escalate",
+      "actual_action": "escalate",
+      "predicted_label": "under_specified",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "E3"
+      ]
+    },
+    {
+      "id": "bm_040",
+      "subset": "generated",
+      "label": "under_specified",
+      "expected_action": "escalate",
+      "actual_action": "escalate",
+      "predicted_label": "under_specified",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "E3"
+      ]
+    },
+    {
+      "id": "bm_041",
+      "subset": "generated",
+      "label": "under_specified",
+      "expected_action": "escalate",
+      "actual_action": "escalate",
+      "predicted_label": "under_specified",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "E3"
+      ]
+    },
+    {
+      "id": "bm_042",
+      "subset": "generated",
+      "label": "under_specified",
+      "expected_action": "escalate",
+      "actual_action": "escalate",
+      "predicted_label": "under_specified",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "E3"
+      ]
+    },
+    {
+      "id": "bm_043",
+      "subset": "generated",
+      "label": "under_specified",
+      "expected_action": "escalate",
+      "actual_action": "escalate",
+      "predicted_label": "under_specified",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "E3"
+      ]
+    },
+    {
+      "id": "bm_044",
+      "subset": "generated",
+      "label": "under_specified",
+      "expected_action": "escalate",
+      "actual_action": "escalate",
+      "predicted_label": "under_specified",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "E3"
+      ]
+    },
+    {
+      "id": "bm_045",
+      "subset": "generated",
+      "label": "under_specified",
+      "expected_action": "escalate",
+      "actual_action": "escalate",
+      "predicted_label": "under_specified",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "E3"
+      ]
+    },
+    {
+      "id": "bm_046",
+      "subset": "generated",
+      "label": "under_specified",
+      "expected_action": "escalate",
+      "actual_action": "escalate",
+      "predicted_label": "under_specified",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "E3"
+      ]
+    },
+    {
+      "id": "bm_047",
+      "subset": "generated",
+      "label": "under_specified",
+      "expected_action": "escalate",
+      "actual_action": "escalate",
+      "predicted_label": "under_specified",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "E3"
+      ]
+    },
+    {
+      "id": "bm_048",
+      "subset": "generated",
+      "label": "under_specified",
+      "expected_action": "escalate",
+      "actual_action": "escalate",
+      "predicted_label": "under_specified",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "E3"
+      ]
+    },
+    {
+      "id": "bm_049",
+      "subset": "generated",
+      "label": "under_specified",
+      "expected_action": "escalate",
+      "actual_action": "escalate",
+      "predicted_label": "under_specified",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "E3"
+      ]
+    },
+    {
+      "id": "bm_050",
+      "subset": "generated",
+      "label": "under_specified",
+      "expected_action": "escalate",
+      "actual_action": "escalate",
+      "predicted_label": "under_specified",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "E3"
+      ]
+    },
+    {
+      "id": "bm_051",
+      "subset": "generated",
+      "label": "under_specified",
+      "expected_action": "escalate",
+      "actual_action": "escalate",
+      "predicted_label": "under_specified",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "E3"
+      ]
+    },
+    {
+      "id": "bm_052",
+      "subset": "generated",
+      "label": "under_specified",
+      "expected_action": "escalate",
+      "actual_action": "escalate",
+      "predicted_label": "under_specified",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "E3"
+      ]
+    },
+    {
+      "id": "bm_053",
+      "subset": "generated",
+      "label": "under_specified",
+      "expected_action": "escalate",
+      "actual_action": "escalate",
+      "predicted_label": "under_specified",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "E3"
+      ]
+    },
+    {
+      "id": "bm_054",
+      "subset": "generated",
+      "label": "under_specified",
+      "expected_action": "escalate",
+      "actual_action": "escalate",
+      "predicted_label": "under_specified",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "E3"
+      ]
+    },
+    {
+      "id": "bm_055",
+      "subset": "generated",
+      "label": "under_specified",
+      "expected_action": "escalate",
+      "actual_action": "escalate",
+      "predicted_label": "under_specified",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "E3"
+      ]
+    },
+    {
+      "id": "bm_056",
+      "subset": "generated",
+      "label": "out_of_policy",
+      "expected_action": "refuse",
+      "actual_action": "refuse",
+      "predicted_label": "out_of_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "X3",
+        "R2"
+      ]
+    },
+    {
+      "id": "bm_057",
+      "subset": "generated",
+      "label": "out_of_policy",
+      "expected_action": "refuse",
+      "actual_action": "refuse",
+      "predicted_label": "out_of_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "X3",
+        "R2"
+      ]
+    },
+    {
+      "id": "bm_058",
+      "subset": "generated",
+      "label": "out_of_policy",
+      "expected_action": "refuse",
+      "actual_action": "refuse",
+      "predicted_label": "out_of_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "X3",
+        "R2"
+      ]
+    },
+    {
+      "id": "bm_059",
+      "subset": "generated",
+      "label": "out_of_policy",
+      "expected_action": "refuse",
+      "actual_action": "refuse",
+      "predicted_label": "out_of_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "X3",
+        "R2"
+      ]
+    },
+    {
+      "id": "bm_060",
+      "subset": "generated",
+      "label": "out_of_policy",
+      "expected_action": "refuse",
+      "actual_action": "refuse",
+      "predicted_label": "out_of_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "X3",
+        "R2"
+      ]
+    },
+    {
+      "id": "bm_061",
+      "subset": "generated",
+      "label": "out_of_policy",
+      "expected_action": "refuse",
+      "actual_action": "refuse",
+      "predicted_label": "out_of_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "X3",
+        "R2"
+      ]
+    },
+    {
+      "id": "bm_062",
+      "subset": "generated",
+      "label": "out_of_policy",
+      "expected_action": "refuse",
+      "actual_action": "refuse",
+      "predicted_label": "out_of_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "X4",
+        "R3"
+      ]
+    },
+    {
+      "id": "bm_063",
+      "subset": "generated",
+      "label": "out_of_policy",
+      "expected_action": "refuse",
+      "actual_action": "refuse",
+      "predicted_label": "out_of_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "X4",
+        "R3"
+      ]
+    },
+    {
+      "id": "bm_064",
+      "subset": "generated",
+      "label": "out_of_policy",
+      "expected_action": "refuse",
+      "actual_action": "refuse",
+      "predicted_label": "out_of_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "X4",
+        "R3"
+      ]
+    },
+    {
+      "id": "bm_065",
+      "subset": "generated",
+      "label": "out_of_policy",
+      "expected_action": "refuse",
+      "actual_action": "refuse",
+      "predicted_label": "out_of_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "X4",
+        "R3"
+      ]
+    },
+    {
+      "id": "bm_066",
+      "subset": "generated",
+      "label": "out_of_policy",
+      "expected_action": "refuse",
+      "actual_action": "refuse",
+      "predicted_label": "out_of_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "X4",
+        "R3"
+      ]
+    },
+    {
+      "id": "bm_067",
+      "subset": "generated",
+      "label": "out_of_policy",
+      "expected_action": "refuse",
+      "actual_action": "refuse",
+      "predicted_label": "out_of_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "X2",
+        "R4"
+      ]
+    },
+    {
+      "id": "bm_068",
+      "subset": "generated",
+      "label": "out_of_policy",
+      "expected_action": "refuse",
+      "actual_action": "refuse",
+      "predicted_label": "out_of_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "X2",
+        "R4"
+      ]
+    },
+    {
+      "id": "bm_069",
+      "subset": "generated",
+      "label": "out_of_policy",
+      "expected_action": "refuse",
+      "actual_action": "refuse",
+      "predicted_label": "out_of_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "X2",
+        "R4"
+      ]
+    },
+    {
+      "id": "bm_070",
+      "subset": "generated",
+      "label": "out_of_policy",
+      "expected_action": "refuse",
+      "actual_action": "refuse",
+      "predicted_label": "out_of_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "X2",
+        "R4"
+      ]
+    },
+    {
+      "id": "bm_071",
+      "subset": "generated",
+      "label": "out_of_policy",
+      "expected_action": "refuse",
+      "actual_action": "refuse",
+      "predicted_label": "out_of_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "X2",
+        "R4"
+      ]
+    },
+    {
+      "id": "bm_072",
+      "subset": "generated",
+      "label": "out_of_policy",
+      "expected_action": "refuse",
+      "actual_action": "refuse",
+      "predicted_label": "out_of_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "X2",
+        "R4"
+      ]
+    },
+    {
+      "id": "bm_073",
+      "subset": "generated",
+      "label": "out_of_policy",
+      "expected_action": "refuse",
+      "actual_action": "refuse",
+      "predicted_label": "out_of_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "X1"
+      ]
+    },
+    {
+      "id": "bm_074",
+      "subset": "generated",
+      "label": "out_of_policy",
+      "expected_action": "refuse",
+      "actual_action": "refuse",
+      "predicted_label": "out_of_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "X1"
+      ]
+    },
+    {
+      "id": "bm_075",
+      "subset": "generated",
+      "label": "out_of_policy",
+      "expected_action": "refuse",
+      "actual_action": "refuse",
+      "predicted_label": "out_of_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "X1"
+      ]
+    },
+    {
+      "id": "bm_076",
+      "subset": "generated",
+      "label": "out_of_policy",
+      "expected_action": "refuse",
+      "actual_action": "escalate",
+      "predicted_label": "under_specified",
+      "correct": false,
+      "label_correct": false,
+      "provider": "claude",
+      "policy_refs": [
+        "E3",
+        "X1"
+      ]
+    },
+    {
+      "id": "bm_077",
+      "subset": "generated",
+      "label": "out_of_policy",
+      "expected_action": "refuse",
+      "actual_action": "refuse",
+      "predicted_label": "out_of_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "X1"
+      ]
+    },
+    {
+      "id": "bm_078",
+      "subset": "generated",
+      "label": "out_of_policy",
+      "expected_action": "refuse",
+      "actual_action": "refuse",
+      "predicted_label": "out_of_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "X1"
+      ]
+    },
+    {
+      "id": "bm_079",
+      "subset": "generated",
+      "label": "out_of_policy",
+      "expected_action": "refuse",
+      "actual_action": "refuse",
+      "predicted_label": "out_of_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "X3",
+        "R2"
+      ]
+    },
+    {
+      "id": "bm_080",
+      "subset": "generated",
+      "label": "out_of_policy",
+      "expected_action": "refuse",
+      "actual_action": "refuse",
+      "predicted_label": "out_of_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "X3",
+        "R2"
+      ]
+    },
+    {
+      "id": "bd_001",
+      "subset": "boundary",
+      "label": "in_policy",
+      "expected_action": "refund",
+      "actual_action": "refund",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5"
+      ]
+    },
+    {
+      "id": "bd_002",
+      "subset": "boundary",
+      "label": "out_of_policy",
+      "expected_action": "refuse",
+      "actual_action": "refuse",
+      "predicted_label": "out_of_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "X3",
+        "R2"
+      ]
+    },
+    {
+      "id": "bd_003",
+      "subset": "boundary",
+      "label": "in_policy",
+      "expected_action": "refund",
+      "actual_action": "refund",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5"
+      ]
+    },
+    {
+      "id": "bd_004",
+      "subset": "boundary",
+      "label": "in_policy",
+      "expected_action": "escalate",
+      "actual_action": "escalate",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "E1",
+        "R5"
+      ]
+    },
+    {
+      "id": "bd_005",
+      "subset": "boundary",
+      "label": "in_policy",
+      "expected_action": "refund",
+      "actual_action": "refund",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5"
+      ]
+    },
+    {
+      "id": "bd_006",
+      "subset": "boundary",
+      "label": "out_of_policy",
+      "expected_action": "refuse",
+      "actual_action": "refuse",
+      "predicted_label": "out_of_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "X2",
+        "R4"
+      ]
+    },
+    {
+      "id": "bd_007",
+      "subset": "boundary",
+      "label": "in_policy",
+      "expected_action": "refund",
+      "actual_action": "refund",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5"
+      ]
+    },
+    {
+      "id": "bd_008",
+      "subset": "boundary",
+      "label": "out_of_policy",
+      "expected_action": "refuse",
+      "actual_action": "refuse",
+      "predicted_label": "out_of_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "R1"
+      ]
+    },
+    {
+      "id": "bd_009",
+      "subset": "boundary",
+      "label": "in_policy",
+      "expected_action": "refund",
+      "actual_action": "refund",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5"
+      ]
+    },
+    {
+      "id": "bd_010",
+      "subset": "boundary",
+      "label": "in_policy",
+      "expected_action": "refund",
+      "actual_action": "refund",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5"
+      ]
+    },
+    {
+      "id": "bd_011",
+      "subset": "boundary",
+      "label": "in_policy",
+      "expected_action": "refund",
+      "actual_action": "refund",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5"
+      ]
+    },
+    {
+      "id": "bd_012",
+      "subset": "boundary",
+      "label": "out_of_policy",
+      "expected_action": "refuse",
+      "actual_action": "refuse",
+      "predicted_label": "out_of_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "X3",
+        "R2"
+      ]
+    },
+    {
+      "id": "bd_013",
+      "subset": "boundary",
+      "label": "out_of_policy",
+      "expected_action": "refuse",
+      "actual_action": "refuse",
+      "predicted_label": "out_of_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "X4",
+        "R3"
+      ]
+    },
+    {
+      "id": "bd_014",
+      "subset": "boundary",
+      "label": "in_policy",
+      "expected_action": "escalate",
+      "actual_action": "escalate",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "E2"
+      ]
+    },
+    {
+      "id": "bd_015",
+      "subset": "boundary",
+      "label": "out_of_policy",
+      "expected_action": "refuse",
+      "actual_action": "refuse",
+      "predicted_label": "out_of_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "X1"
+      ]
+    },
+    {
+      "id": "bd_016",
+      "subset": "boundary",
+      "label": "out_of_policy",
+      "expected_action": "refuse",
+      "actual_action": "refuse",
+      "predicted_label": "out_of_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "R1",
+        "X1"
+      ]
+    },
+    {
+      "id": "bd_017",
+      "subset": "boundary",
+      "label": "in_policy",
+      "expected_action": "refund",
+      "actual_action": "refund",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5"
+      ]
+    },
+    {
+      "id": "bd_018",
+      "subset": "boundary",
+      "label": "in_policy",
+      "expected_action": "close",
+      "actual_action": "close",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "C1"
+      ]
+    },
+    {
+      "id": "bd_019",
+      "subset": "boundary",
+      "label": "under_specified",
+      "expected_action": "escalate",
+      "actual_action": "escalate",
+      "predicted_label": "under_specified",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "E3"
+      ]
+    },
+    {
+      "id": "bd_020",
+      "subset": "boundary",
+      "label": "in_policy",
+      "expected_action": "escalate",
+      "actual_action": "escalate",
+      "predicted_label": "in_policy",
+      "correct": true,
+      "label_correct": true,
+      "provider": "claude",
+      "policy_refs": [
+        "E2"
+      ]
+    }
+  ]
+}

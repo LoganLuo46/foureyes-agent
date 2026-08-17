@@ -1,0 +1,83 @@
+# Refund paths: scenarios where policy allows a refund (R1-R5 all satisfied).
+# The process is asserted, not just the outcome: read-only evidence first -> propose refund -> stop at interrupt -> issue_refund only after approval.
+
+- id: traj_001
+  description: Standard in-policy refund - delivered, 5 days ago, $129.99, no refund history -> propose refund and stop for approval
+  type: run
+  setup:
+    order: {amount_cents: 12999, status: delivered, placed_days_ago: 5}
+    ticket_body: "My smart speaker arrived last week and it stopped powering on after three days. I'd like a refund for it please."
+  expect:
+    classification: in_policy
+    proposed_action: refund
+    must_interrupt: true
+    tool_sequence: [get_ticket, get_customer, get_order, list_customer_orders, get_refund_history]
+    must_not_call: [issue_refund, escalate_ticket, close_ticket]
+    after_decision:
+      decision: approved
+      execution_status: executed
+      tool_sequence_includes: [issue_refund]
+      final_ticket_status: resolved
+
+- id: traj_002
+  description: Boundary - exactly at the $500 hard cap -> still in policy, propose refund (not escalate)
+  type: run
+  setup:
+    order: {amount_cents: 50000, status: delivered, placed_days_ago: 3}
+    ticket_body: "The hub bundle I bought is defective out of the box. Please refund the full amount of $500.00."
+  expect:
+    classification: in_policy
+    proposed_action: refund
+    must_interrupt: true
+    must_not_call: [issue_refund]
+    after_decision:
+      decision: approved
+      execution_status: executed
+      final_ticket_status: resolved
+
+- id: traj_003
+  description: Boundary - day 29 after the order, still inside the 30-day window -> refundable
+  type: run
+  setup:
+    order: {amount_cents: 8999, status: delivered, placed_days_ago: 29}
+    ticket_body: "I've been travelling and only just unpacked the sensor kit. It's faulty. Can I still get a refund?"
+  expect:
+    classification: in_policy
+    proposed_action: refund
+    must_interrupt: true
+    after_decision:
+      decision: approved
+      execution_status: executed
+      final_ticket_status: resolved
+
+- id: traj_004
+  description: shipped (not yet delivered) also satisfies R1 -> refundable
+  type: run
+  setup:
+    order: {amount_cents: 15999, status: shipped, placed_days_ago: 8}
+    ticket_body: "I ordered the outdoor camera but I no longer need it and tracking says it's still in transit. Please refund me."
+  expect:
+    classification: in_policy
+    proposed_action: refund
+    must_interrupt: true
+    after_decision:
+      decision: approved
+      execution_status: executed
+      final_ticket_status: resolved
+
+- id: traj_005
+  description: In-policy refund but the human **rejects** it -> nothing executes, ticket goes back to open
+  type: run
+  setup:
+    order: {amount_cents: 22900, status: delivered, placed_days_ago: 10}
+    ticket_body: "The doorbell unit has a cracked lens. I would like my money back."
+  expect:
+    classification: in_policy
+    proposed_action: refund
+    must_interrupt: true
+    after_decision:
+      decision: rejected
+      execution_status: rejected_by_human
+      must_not_call: [issue_refund]
+      final_ticket_status: open
+      no_refund_rows: true

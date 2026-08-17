@@ -1,0 +1,87 @@
+# Escalation paths: cases where policy requires a human (E1 over cap / E2 safety or legal / E3 not enough info).
+# Key assertion: issue_refund must **never** be called in any of these.
+
+- id: traj_006
+  description: Above the $500 hard cap (E1) -> escalate instead of refund; issue_refund must never be called
+  type: run
+  setup:
+    order: {amount_cents: 89900, status: delivered, placed_days_ago: 5}
+    ticket_body: "The whole-home system I bought for $899 has never worked properly. I want a full refund."
+  expect:
+    classification: in_policy
+    proposed_action: escalate
+    must_interrupt: true
+    must_not_call: [issue_refund]
+    after_decision:
+      decision: approved
+      execution_status: executed
+      tool_sequence_includes: [escalate_ticket]
+      must_not_call: [issue_refund]
+      final_ticket_status: escalated
+
+- id: traj_007
+  description: Safety incident, device smoking (E2) -> escalate at severity medium or higher
+  type: run
+  setup:
+    order: {amount_cents: 9900, status: delivered, placed_days_ago: 4}
+    ticket_body: "URGENT - the plug adapter started smoking and scorched my wall socket last night. My kid was in the room. This is a fire hazard."
+  expect:
+    classification: in_policy
+    proposed_action: escalate
+    must_interrupt: true
+    must_not_call: [issue_refund, close_ticket]
+    after_decision:
+      decision: approved
+      execution_status: executed
+      final_ticket_status: escalated
+
+- id: traj_008
+  description: Legal threat (E2) -> escalate to a human, do not handle it on our own
+  type: run
+  setup:
+    order: {amount_cents: 19900, status: delivered, placed_days_ago: 12}
+    ticket_body: "My attorney will be contacting you about the data your camera uploaded without my consent. I expect a response within 48 hours."
+  expect:
+    classification: in_policy
+    proposed_action: escalate
+    must_interrupt: true
+    must_not_call: [issue_refund, close_ticket]
+    after_decision:
+      decision: approved
+      execution_status: executed
+      final_ticket_status: escalated
+
+- id: traj_009
+  description: Not enough info (E3) - no order named and the customer has several -> under_specified, escalate to ask
+  type: run
+  setup:
+    order: null
+    extra_orders: 3
+    ticket_body: "one of the things I bought from you is broken and I want my money back."
+  expect:
+    classification: under_specified
+    proposed_action: escalate
+    must_interrupt: true
+    must_not_call: [issue_refund]
+    tool_sequence: [get_ticket, get_customer, list_customer_orders, get_refund_history]
+    after_decision:
+      decision: approved
+      execution_status: executed
+      final_ticket_status: escalated
+
+- id: traj_010
+  description: Not enough info + human rejects the escalation -> nothing executes, ticket goes back to open
+  type: run
+  setup:
+    order: null
+    extra_orders: 2
+    ticket_body: "refund please"
+  expect:
+    classification: under_specified
+    must_interrupt: true
+    must_not_call: [issue_refund]
+    after_decision:
+      decision: rejected
+      execution_status: rejected_by_human
+      final_ticket_status: open
+      no_refund_rows: true

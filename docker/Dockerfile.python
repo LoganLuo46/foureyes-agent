@@ -1,0 +1,11 @@
+# Shared image for mcp_action and api (both Python; only the CMD differs)
+FROM python:3.12-slim
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY agent/ ./agent/
+COPY llm/ ./llm/
+COPY mcp_action/ ./mcp_action/
+COPY api/ ./api/
+COPY policy/ ./policy/
+ENV PYTHONPATH=/app PYTHONUNBUFFERED=1

@@ -1,0 +1,84 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: foureyes
+      POSTGRES_PASSWORD: foureyes
+      POSTGRES_DB: foureyes
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      # Schema is applied automatically on first init (to rebuild: docker compose down -v && up)
+      - ./db/schema.sql:/docker-entrypoint-initdb.d/01_schema.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U foureyes -d foureyes"]
+      interval: 2s
+      timeout: 3s
+      retries: 15
+
+  # Read-only lookup server (TypeScript SDK). Connects as the foureyes_ro role, so it has no
+  # write ability at the database permission level (ADR-002) — not just well-behaved code.
+  mcp-lookup:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.lookup
+    environment:
+      DATABASE_URL_RO: postgresql://foureyes_ro:foureyes_ro@postgres:5432/foureyes
+      MCP_LOOKUP_PORT: 8101
+    ports:
+      - "8101:8101"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "node -e \"fetch('http://localhost:8101/healthz').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))\""]
+      interval: 3s
+      timeout: 3s
+      retries: 10
+
+  # Write-gated action server (Python SDK). Deterministic business guardrails on all three write tools (ADR-005).
+  mcp-action:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.python
+    command: python mcp_action/server.py
+    environment:
+      DATABASE_URL: postgresql://foureyes:foureyes@postgres:5432/foureyes
+      MCP_ACTION_PORT: 8102
+      REFUND_CAP_CENTS: ${REFUND_CAP_CENTS:-50000}
+      REFUND_WINDOW_DAYS: ${REFUND_WINDOW_DAYS:-30}
+    ports:
+      - "8102:8102"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  # Console backend. It only resumes the graph; it has no execution ability of its own (ADR-012).
+  api:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.python
+    command: uvicorn api.main:app --host 0.0.0.0 --port 8000
+    environment:
+      DATABASE_URL: postgresql://foureyes:foureyes@postgres:5432/foureyes
+      MCP_LOOKUP_URL: http://mcp-lookup:8101/mcp
+      MCP_ACTION_URL: http://mcp-action:8102/mcp
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      GOOGLE_API_KEY: ${GOOGLE_API_KEY:-}
+      LANGFUSE_PUBLIC_KEY: ${LANGFUSE_PUBLIC_KEY:-}
+      LANGFUSE_SECRET_KEY: ${LANGFUSE_SECRET_KEY:-}
+      LANGFUSE_HOST: ${LANGFUSE_HOST:-https://cloud.langfuse.com}
+      CONSOLE_ORIGINS: http://localhost:5173
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      mcp-lookup:
+        condition: service_started
+      mcp-action:
+        condition: service_started
+
+volumes:
+  pgdata:
